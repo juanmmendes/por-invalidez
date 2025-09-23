@@ -118,7 +118,7 @@
     .hero .wrap{padding:72px var(--space) 56px}
     .hero .cols-2{align-items:center}
     .hero .title{max-width:26ch}
-    .img-ph{display:flex;align-items:center;justify-content:center}
+    .img-ph{display:flex;align-items:center;justify-content:center;}
     .img-hero{aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-inline:auto}
     .img-hero img{width:100%;height:100%;object-fit:cover;object-position:center}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
@@ -161,6 +161,26 @@
     #documentos{padding-top:128px}
     #calculo .wrap.grid.cols-2 > .card{width:100%;max-width:640px;margin:0 auto}
     #doencas .img-wide img{width:60%;max-width:60%;margin:0 auto;display:block;border-radius:14px;object-fit:cover}
+    /* Fundo transparente para a div da imagem de doenças */
+    .img-ph.img-wide { background: transparent !important; box-shadow: none !important; }
+
+    /* Ajuste do tamanho da imagem de print Meu INSS para desktops */
+    @media (min-width: 981px) {
+      #documentos .img-wide img {
+        width: 38vw;
+        max-width: 480px;
+      }
+    }
+    @media (max-width: 980px) {
+      #documentos .img-wide img {
+        width: 60%;
+        max-width: 700px;
+      }
+    }
+
+    /* Reduzir distância entre cálculo e documentos */
+    #calculo { padding-bottom: 36px; }
+    #documentos { padding-top: 56px; }
 
     /* Footer */
     footer{background:#ffffff;border-top:1px solid var(--line);color:#253557}
@@ -410,10 +430,6 @@
           </ol>
         </div>
       </div>
-      <div class="wrap" style="margin-top:18px">
-        <div class="img-ph img-wide reveal" aria-label="Print Meu INSS">
-          <img src="img/Captura de tela 2025-09-05 152151.png" alt="Print Meu INSS"/>
-        </div>
       </div>
     </section>
 
